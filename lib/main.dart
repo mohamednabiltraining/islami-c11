@@ -26,4 +26,7 @@ class MyApp extends StatelessWidget {
       theme: MyThemeData.lightTheme,
     );
   }
+
+}String getFullPath(String imagepath){
+  return 'assets/images/$imagepath';
 }
