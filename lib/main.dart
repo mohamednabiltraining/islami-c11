@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale('en'),
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: ThemeMode.light,
     );
   }
 }
