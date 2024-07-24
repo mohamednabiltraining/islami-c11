@@ -5,6 +5,7 @@ import 'package:islami_c11/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islami_c11/ui/home/quran/quran_tab.dart';
 import 'package:islami_c11/ui/home/radio/radio_tab.dart';
 import 'package:islami_c11/ui/home/tasbeh/tasbeh_tab.dart';
+import 'package:islami_c11/ui/ui_utils.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Scaffold(
       appBar: AppBar(
         title: Text(
-          "Islami",
+          appTranslations(context).appTitle,
         ),
       ),
       body: tabs[selectedIndex],
@@ -34,10 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         currentIndex: selectedIndex,
         items: [
-          BottomNavItem("Quran", 'ic_quran.png'),
-          BottomNavItem("Hadeth", 'ic_hadeth.png'),
-          BottomNavItem("Tasbeh", 'ic_sebha.png'),
-          BottomNavItem("Radio", 'ic_radio.png'),
+          BottomNavItem(appTranslations(context).quranTab, 'ic_quran.png'),
+          BottomNavItem(appTranslations(context).hadethTab, 'ic_hadeth.png'),
+          BottomNavItem(appTranslations(context).tasbehTab, 'ic_sebha.png'),
+          BottomNavItem(appTranslations(context).radioTab, 'ic_radio.png'),
         ],
       ),
     ));
