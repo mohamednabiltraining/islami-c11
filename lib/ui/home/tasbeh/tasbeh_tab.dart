@@ -31,7 +31,7 @@ class _TasbehTabState extends State<TasbehTab> {
           children:[
 
             Image.asset(getFullPathImage('head of seb7a.png')),
-            Padding(padding: const EdgeInsets.only(top: 75.0),
+            Padding(padding: const EdgeInsets.only(top: 70.0),
               child: Transform.rotate(
                 angle: angel,
                 child: GestureDetector(
