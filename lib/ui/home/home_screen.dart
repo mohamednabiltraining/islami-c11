@@ -49,5 +49,5 @@ class _HomeScreenState extends State<HomeScreen> {
     ));
   }
 
-  var tabs = [QuranbTab(), HadethTab(), TasbehTab(), RadioTab()];
+  var tabs = [QuranbTab(), HadethTab(), SebhaScreen(), RadioTab()];
 }
