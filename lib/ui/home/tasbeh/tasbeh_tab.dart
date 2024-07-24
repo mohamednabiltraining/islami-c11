@@ -94,17 +94,17 @@ class _TasbehTabState extends State<TasbehTab> {
 
 
   }
-  OnTap(){
+  OnTap() {
     counter++;
-    if(counter%33==0){
+    if (counter % 33 == 0) {
       index++;
       counter++;
-      counter =0;
+      counter = 0;
     }
-    if(index==Azkar.length){
-      index==0;
+    if (index == Azkar.length) {
+      index == 0;
     }
-    angel +=360/4;
+    angel += 360 / 4;
     setState(() {
 
     });
