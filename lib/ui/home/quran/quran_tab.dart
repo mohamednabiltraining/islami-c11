@@ -133,7 +133,7 @@ class QuranbTab extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text('اسم السوره',
+          child: Text( appTranslations(context).chapterTitle,
               style: Theme.of(context).textTheme.titleMedium),
         ),
         Container(

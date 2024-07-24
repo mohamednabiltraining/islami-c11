@@ -5,6 +5,7 @@ import 'package:islami_c11/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islami_c11/ui/home/quran/quran_tab.dart';
 import 'package:islami_c11/ui/home/radio/radio_tab.dart';
 import 'package:islami_c11/ui/home/tasbeh/tasbeh_tab.dart';
+import 'package:islami_c11/ui/ui_utils.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Scaffold(
       appBar: AppBar(
         title: Text(
-          "Islami",
+          appTranslations(context).appTitle,
           style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
@@ -36,13 +37,13 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: selectedIndex,
         items: [
           BottomNavItem(
-              "Quran", 'ic_quran.png', Theme.of(context).colorScheme.primary),
+              appTranslations(context).quranTab, 'ic_quran.png', Theme.of(context).colorScheme.primary),
           BottomNavItem(
-              "Hadeth", 'ic_hadeth.png', Theme.of(context).colorScheme.primary),
+              appTranslations(context).hadethTab, 'ic_hadeth.png', Theme.of(context).colorScheme.primary),
           BottomNavItem(
-              "Tasbeh", 'ic_sebha.png', Theme.of(context).colorScheme.primary),
+              appTranslations(context).tasbehTab, 'ic_sebha.png', Theme.of(context).colorScheme.primary),
           BottomNavItem(
-              "Radio", 'ic_radio.png', Theme.of(context).colorScheme.primary),
+              appTranslations(context).radioTab , 'ic_radio.png', Theme.of(context).colorScheme.primary),
         ],
       ),
     ));
