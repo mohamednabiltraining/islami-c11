@@ -32,9 +32,7 @@ class HadethDetailsScreen extends StatelessWidget {
                     child: Text(
                       hadeth.content,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
                 ),

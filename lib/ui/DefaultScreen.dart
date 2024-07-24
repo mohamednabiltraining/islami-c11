@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c11/ui/theme/MyTheme.dart';
 import 'package:islami_c11/ui/ui_utils.dart';
 
 class DefaultScreen extends StatelessWidget {
@@ -8,7 +9,17 @@ class DefaultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-        children: [Image.asset(getFullPathImage("main_background.jpg")), body]);
+    ///todo: use provider to get theme mode
+    bool isDark = MyThemeData.isDark;
+    return Stack(children: [
+      Image.asset(
+        getFullPathImage(
+            isDark ? "dark_main_background.png" : "main_background.jpg"),
+        fit: BoxFit.fill,
+        width: double.infinity,
+        height: double.infinity,
+      ),
+      body
+    ]);
   }
 }

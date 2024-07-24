@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(
           "Islami",
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       body: tabs[selectedIndex],
@@ -34,10 +35,14 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         currentIndex: selectedIndex,
         items: [
-          BottomNavItem("Quran", 'ic_quran.png'),
-          BottomNavItem("Hadeth", 'ic_hadeth.png'),
-          BottomNavItem("Tasbeh", 'ic_sebha.png'),
-          BottomNavItem("Radio", 'ic_radio.png'),
+          BottomNavItem(
+              "Quran", 'ic_quran.png', Theme.of(context).colorScheme.primary),
+          BottomNavItem(
+              "Hadeth", 'ic_hadeth.png', Theme.of(context).colorScheme.primary),
+          BottomNavItem(
+              "Tasbeh", 'ic_sebha.png', Theme.of(context).colorScheme.primary),
+          BottomNavItem(
+              "Radio", 'ic_radio.png', Theme.of(context).colorScheme.primary),
         ],
       ),
     ));
