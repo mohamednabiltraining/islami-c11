@@ -134,7 +134,7 @@ class QuranbTab extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Text(
-            'Chapter Name',
+            appTranslations(context).chapterTitle,
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
           ),
         ),
