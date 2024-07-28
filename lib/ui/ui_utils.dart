@@ -5,6 +5,6 @@ String getFullPathImage(String imageName) {
   return "assets/images/$imageName";
 }
 
-AppLocalizations appTranslations(BuildContext context) {
+AppLocalizations getTranslations(BuildContext context) {
   return AppLocalizations.of(context)!;
 }

@@ -4,6 +4,7 @@ import 'package:islami_c11/ui/home/BottomNavItem.dart';
 import 'package:islami_c11/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islami_c11/ui/home/quran/quran_tab.dart';
 import 'package:islami_c11/ui/home/radio/radio_tab.dart';
+import 'package:islami_c11/ui/home/settings/SettingsTab.dart';
 import 'package:islami_c11/ui/home/tasbeh/tasbeh_tab.dart';
 import 'package:islami_c11/ui/ui_utils.dart';
 
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Scaffold(
       appBar: AppBar(
         title: Text(
-          appTranslations(context).appTitle,
+          getTranslations(context).appTitle,
           style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
@@ -37,17 +38,30 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: selectedIndex,
         items: [
           BottomNavItem(
-              appTranslations(context).quranTab, 'ic_quran.png', Theme.of(context).colorScheme.primary),
+            getTranslations(context).quranTab,
+            Theme.of(context).colorScheme.primary,
+            iconPath: 'ic_quran.png',
+          ),
           BottomNavItem(
-              appTranslations(context).hadethTab, 'ic_hadeth.png', Theme.of(context).colorScheme.primary),
+            getTranslations(context).hadethTab,
+            Theme.of(context).colorScheme.primary,
+            iconPath: 'ic_hadeth.png',
+          ),
+          BottomNavItem(getTranslations(context).tasbehTab,
+              Theme.of(context).colorScheme.primary,
+              iconPath: 'ic_sebha.png'),
           BottomNavItem(
-              appTranslations(context).tasbehTab, 'ic_sebha.png', Theme.of(context).colorScheme.primary),
-          BottomNavItem(
-              appTranslations(context).radioTab , 'ic_radio.png', Theme.of(context).colorScheme.primary),
+            getTranslations(context).radioTab,
+            Theme.of(context).colorScheme.primary,
+            iconPath: 'ic_radio.png',
+          ),
+          BottomNavItem(getTranslations(context).settings,
+              Theme.of(context).colorScheme.primary,
+              mainIcon: Icon(Icons.settings)),
         ],
       ),
     ));
   }
 
-  var tabs = [QuranbTab(), HadethTab(), TasbehTab(), RadioTab()];
+  var tabs = [QuranbTab(), HadethTab(), TasbehTab(), RadioTab(), SettingsTab()];
 }
