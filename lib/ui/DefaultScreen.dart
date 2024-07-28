@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_c11/ui/theme/MyTheme.dart';
+import 'package:islami_c11/ui/providers/ThemeProvider.dart';
 import 'package:islami_c11/ui/ui_utils.dart';
+import 'package:provider/provider.dart';
 
 class DefaultScreen extends StatelessWidget {
   Widget body;
@@ -9,8 +10,9 @@ class DefaultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ///todo: use provider to get theme mode
-    bool isDark = MyThemeData.isDark;
+    ThemeProvider provider = Provider.of<ThemeProvider>(context);
+    bool isDark = provider.isDarkEnabled();
+
     return Stack(children: [
       Image.asset(
         getFullPathImage(

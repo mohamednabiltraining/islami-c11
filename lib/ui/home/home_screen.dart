@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Scaffold(
       appBar: AppBar(
         title: Text(
-          appTranslations(context).appTitle,
+          getTranslations(context).appTitle,
           style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
@@ -38,24 +38,24 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: selectedIndex,
         items: [
           BottomNavItem(
-            appTranslations(context).quranTab,
+            getTranslations(context).quranTab,
             Theme.of(context).colorScheme.primary,
             iconPath: 'ic_quran.png',
           ),
           BottomNavItem(
-            appTranslations(context).hadethTab,
+            getTranslations(context).hadethTab,
             Theme.of(context).colorScheme.primary,
             iconPath: 'ic_hadeth.png',
           ),
-          BottomNavItem(appTranslations(context).tasbehTab,
+          BottomNavItem(getTranslations(context).tasbehTab,
               Theme.of(context).colorScheme.primary,
               iconPath: 'ic_sebha.png'),
           BottomNavItem(
-            appTranslations(context).radioTab,
+            getTranslations(context).radioTab,
             Theme.of(context).colorScheme.primary,
             iconPath: 'ic_radio.png',
           ),
-          BottomNavItem(appTranslations(context).settings,
+          BottomNavItem(getTranslations(context).settings,
               Theme.of(context).colorScheme.primary,
               mainIcon: Icon(Icons.settings)),
         ],

@@ -5,9 +5,9 @@ class MyThemeData {
   static final Color lightPrimary = Color(0xFFB7935F);
   static final Color darkPrimary = Color(0xFF141A2E);
   static final Color darkSecondary = Color(0xFFFACC1D);
-  static const bool isDark = false;
 
   static final ThemeData lightTheme = ThemeData(
+      bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.white),
       textTheme: TextTheme(
         titleMedium: TextStyle(
             fontSize: 30,
@@ -49,6 +49,7 @@ class MyThemeData {
           onSecondary: Colors.black));
 
   static final ThemeData darkTheme = ThemeData(
+      bottomSheetTheme: BottomSheetThemeData(backgroundColor: darkPrimary),
       textTheme: TextTheme(
         titleMedium: TextStyle(
             fontSize: 30,
@@ -86,6 +87,6 @@ class MyThemeData {
           primary: darkPrimary,
           seedColor: darkPrimary,
           onPrimary: Colors.white,
-          secondary: darkPrimary,
+          secondary: darkSecondary,
           onSecondary: Colors.black));
 }

@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c11/ui/home/settings/LanguageBottomSheet.dart';
 import 'package:islami_c11/ui/home/settings/ThemeBottomSheet.dart';
+import 'package:islami_c11/ui/providers/LocaleProvider.dart';
+import 'package:islami_c11/ui/ui_utils.dart';
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var localeProvider = LocaleProvider.get(context);
     return Padding(
       padding: const EdgeInsets.only(top: 36.0, left: 12, right: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Theme",
+            getTranslations(context).theme,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Divider(
@@ -32,7 +35,7 @@ class SettingsTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18),
                   color: Theme.of(context).cardColor),
               child: Text(
-                "Light",
+                getTranslations(context).light,
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge
@@ -44,7 +47,7 @@ class SettingsTab extends StatelessWidget {
             height: 24,
           ),
           Text(
-            "Language",
+            getTranslations(context).language,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Divider(
@@ -63,7 +66,7 @@ class SettingsTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18),
                   color: Theme.of(context).cardColor),
               child: Text(
-                "English",
+                localeProvider.getCurrentLocaleText(),
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge

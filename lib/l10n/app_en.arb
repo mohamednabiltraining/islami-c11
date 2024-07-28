@@ -6,5 +6,9 @@
   "radioTab": "Radio",
   "tasbehTab": "Mention",
   "hadethNum": "Hadeth Num",
-  "settings": "Settings"
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "light": "Light",
+  "dark": "Dark"
 }
