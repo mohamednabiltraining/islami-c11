@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:islami_c11/ui/theme/MyTheme.dart';
 import 'package:islami_c11/ui/ui_utils.dart';
 
 class BottomNavItem extends BottomNavigationBarItem {
   BottomNavItem(
-    String title,
-    String iconPath,
-  ) : super(
-            icon: ImageIcon(AssetImage(getFullPathImage(iconPath))),
+    String title, Color backgroundColor,
+      {String? iconPath, Icon? mainIcon = null})
+      : super(
+            icon: mainIcon != null
+                ? mainIcon
+                : ImageIcon(AssetImage(getFullPathImage(iconPath!))),
             label: title,
-            backgroundColor: MyThemeData.lightPrimary);
+            // how to get theme object
+            backgroundColor: backgroundColor);
 }

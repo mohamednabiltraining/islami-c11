@@ -4,7 +4,9 @@ import 'package:islami_c11/ui/home/BottomNavItem.dart';
 import 'package:islami_c11/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islami_c11/ui/home/quran/quran_tab.dart';
 import 'package:islami_c11/ui/home/radio/radio_tab.dart';
+import 'package:islami_c11/ui/home/settings/SettingsTab.dart';
 import 'package:islami_c11/ui/home/tasbeh/tasbeh_tab.dart';
+import 'package:islami_c11/ui/ui_utils.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
@@ -22,7 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Scaffold(
       appBar: AppBar(
         title: Text(
-          "Islami",
+          getTranslations(context).appTitle,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       body: tabs[selectedIndex],
@@ -34,14 +37,31 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         currentIndex: selectedIndex,
         items: [
-          BottomNavItem("Quran", 'ic_quran.png'),
-          BottomNavItem("Hadeth", 'ic_hadeth.png'),
-          BottomNavItem("Tasbeh", 'ic_sebha.png'),
-          BottomNavItem("Radio", 'ic_radio.png'),
+          BottomNavItem(
+            getTranslations(context).quranTab,
+            Theme.of(context).colorScheme.primary,
+            iconPath: 'ic_quran.png',
+          ),
+          BottomNavItem(
+            getTranslations(context).hadethTab,
+            Theme.of(context).colorScheme.primary,
+            iconPath: 'ic_hadeth.png',
+          ),
+          BottomNavItem(getTranslations(context).tasbehTab,
+              Theme.of(context).colorScheme.primary,
+              iconPath: 'ic_sebha.png'),
+          BottomNavItem(
+            getTranslations(context).radioTab,
+            Theme.of(context).colorScheme.primary,
+            iconPath: 'ic_radio.png',
+          ),
+          BottomNavItem(getTranslations(context).settings,
+              Theme.of(context).colorScheme.primary,
+              mainIcon: Icon(Icons.settings)),
         ],
       ),
     ));
   }
 
-  var tabs = [QuranbTab(), HadethTab(), TasbehTab(), RadioTab()];
+  var tabs = [QuranbTab(), HadethTab(), TasbehTab(), RadioTab(), SettingsTab()];
 }
